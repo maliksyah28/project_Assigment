@@ -1,5 +1,5 @@
 // data keseluruhan dari API
-export async function resGetdata(url) {
+export default async function resGetdata(url) {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((Respon) => Respon.json())
@@ -10,12 +10,3 @@ export async function resGetdata(url) {
 }
 
 // data /pokemon
-export async function getPokemon(url) {
-  return new Promise((resolve, reject) => {
-    fetch(url)
-      .then((Res) => Res.json())
-      .then((dat) => {
-        resolve(dat);
-      });
-  });
-}
