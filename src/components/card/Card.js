@@ -1,39 +1,41 @@
 import React from "react";
-import { Box, Image, Badge, Flex ,Button} from "@chakra-ui/react";
+import { Box, Image, Badge, Flex, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 
 // tampilan awal pokemon
 function Card({ pokemon }) {
   //   console.log(pokemonData);
   return (
-    
     <div className="card product-card">
-      <img src={pokemon.sprites.front_default}
-        alt={pokemon.sprites.front_default}  />
+      <img
+        src={pokemon.sprites.front_default}
+        alt={pokemon.sprites.front_default}
+      />
       <div className="mt-2">
         <div>
           <div className="font">
-          <h3>{pokemon.name}</h3>
+            <h3>{pokemon.name}</h3>
           </div>
-          <span className="text-muted" >{pokemon.types.map((type) => {
+          <span className="text-muted">
+            {pokemon.types.map((type) => {
               return <Flex direction="row">type : {type.type.name}</Flex>;
-            })}</span>
+            })}
+          </span>
         </div>
         <div className="d-flex flex-row justify-content-end">
-          <Button
+          <button
             className="mt-2 w-100"
             outline
             color="primary"
-            // tag={Link}
-            // to={`/products/${id}`}
+            tag={Link}
+            to={`/pokemon/${pokemon.id}`}
           >
             Detail
-          </Button>
+          </button>
         </div>
       </div>
     </div>
-    
   );
 }
 
@@ -52,7 +54,9 @@ export default Card;
 // </div>
 
 //with chakra UI
-{/* <Box
+
+{
+  /* <Box
       //   bgColor={"grey"}
       rounded="full"
       border={"1px"}
@@ -93,4 +97,5 @@ export default Card;
           </Box>
         </Box>
       </Box>
-    </Box> */}
+    </Box> */
+}

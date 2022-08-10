@@ -10,7 +10,7 @@ function Home() {
   const [nextPage, setNextPage] = useState("");
   const [prevPage, setPrevPage] = useState("");
   const [loading, setLoading] = useState(true);
-
+  //"https://pokeapi.co/api/v2/pokemon/"
   const initUrl = "https://pokeapi.co/api/v2/pokemon/";
   useEffect(() => {
     // buat nge GET data keseluruhan
@@ -48,7 +48,7 @@ function Home() {
         <>
           <Flex wrap={"wrap"} margin={30}>
             {pokemonData.map((pokemon, i) => {
-              //   console.log(pokemon);
+              // console.log(pokemon);
               return <Card key={i} pokemon={pokemon} />;
             })}
           </Flex>

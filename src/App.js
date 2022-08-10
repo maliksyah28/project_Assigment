@@ -3,14 +3,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import Home from "../src/pages/Home";
-import DetailProduct from "./pages/Detail/[id]";
+import Detail from "../src/pages/Pokemon";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Detail/:id" element={<Home />} />
+        <Route path="/Pokemon/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
